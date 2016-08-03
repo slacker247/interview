@@ -1,0 +1,19 @@
+
+// this is sudo code.  in c#
+
+List<int> flatten(int[] ary)
+{
+    List<int> retAry = new List<int>();
+    for(int i = 0; i < ary.Length, i++)
+    {
+        if(ary[i] is typeof(int[]))
+        {
+            retAry.AddRange(flatten(ary[i]));
+        }
+        else
+        {
+            retAry.Add(ary[i]);
+        }
+    }
+    return retAry;
+}
